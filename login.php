@@ -1,9 +1,31 @@
 <?php
 echo "Hi there";
+session_destroy();
     if(isset($_POST['subData'])){
-        $email=$_POST['email'];
-        $password=sha1($_POST['Code']);
-        $sql="SELECT * FROM abassadors WHERE email= '".$email."' AND password='".$password."'";
+        require('./config.php');
+        $email=$_POST['Email'];
+        $password=$_POST['Code'];
+        $sql="SELECT * FROM ambassador WHERE webmail= '".$email."'";
+        $res=$mysqli->query($sql);
+        if($res->num_rows > 0){
+            $row = $res->fetch_assoc();
+            if($row['password']==$password){
+                echo "meow";
+                session_start();
+                echo "there";
+                $_SESSION['login_user']=$email;
+                // header("location: profile.php");
+                echo "bal";
+                echo $_SESSION['login_user'];
+            }
+            else{
+                echo "password is incorrect";
+            }
+        }
+        else{
+            echo $mysqli->error;
+            echo "Given user does not exist";
+        }
     }
 ?>
 

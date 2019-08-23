@@ -6,10 +6,12 @@
         $college=$_POST['College'];
         $email=$_POST['Email'];
         $code=$_POST['Code'];
-        $check ="SELECT * FROM users WHERE webmail=$email";
+        $check ="SELECT * FROM users WHERE webmail='".$email."'";
         $confirm=$mysqli->query($check);
-        if(mysql_num_rows($confirm)>0)
+        echo "hello";
+        if($confirm->num_rows > 0){
             echo "DOne";
+        }
         else{
             $sql ="INSERT INTO users (`name`,`college`, `webmail`,`code`) VALUES ('$name', '$college', '$email', '$code')" ;
             $res=$mysqli->query($sql);
@@ -22,6 +24,7 @@
                 require('./mail.php');
             }
         }
+        echo "hi";
         
     }
     

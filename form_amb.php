@@ -6,7 +6,7 @@
             $name=$_POST['Name'];
             $college=$_POST['College'];
             $email=$_POST['Email'];
-            $code=sha1($_POST['Password']);
+            $code=$_POST['Password'];
             $hash = md5($code);
             $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'; 
             $randomString = ''; 
@@ -15,14 +15,14 @@
                 $index = rand(0, strlen($characters) - 1); 
                 $randomString .= $characters[$index]; 
             }
-            $sql ="INSERT INTO ambassador (`name`,`college`, `webmail`,`password`,`hash`,`refcode`) VALUES ('$name', '$college', '$email', '$code','$hash',$randomString')" ;
+            $sql ="INSERT INTO ambassador (`id`,`name`,`college`, `webmail`,`password`,`hash`,`refcode`) VALUES ('$name','$name', '$college', '$email', '$code','$hash','$randomString')" ;
             $res=$mysqli->query($sql);
             if(! $res){
                 echo $mysqli->error;
                 // echo query($sql);
             }
             else{
-                $message="Thank you for applying with us as cammpus ambassador. Please click here to activate your account http://localhost/e-cell/verification.php?hash=".$hash."&email=".$email.". Invite more of your friends to win exciting goodies from e-club iitp";
+                $message="Thank you for applying with us as cammpus ambassador. Please click here to activate your account http://localhost/e-cell/verfication.php?hash=".$hash."&email=".$email.". Invite more of your friends to win exciting goodies from e-club iitp";
                 require('./mail.php');
             }
         }
