@@ -1,5 +1,4 @@
 <?php
-echo "Hi there";
 session_destroy();
     if(isset($_POST['subData'])){
         require('./config.php');
