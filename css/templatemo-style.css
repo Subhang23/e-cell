@@ -4,7 +4,10 @@ http://www.templatemo.com/tm-469-impulse
 */
 
 body {
-	background: #f8f8f8;
+	background: lightblue;
+	width:100%;
+    min-width:1000px;
+    height:auto;
 	color: #606060;
 	font-family: 'Proxima', sans-serif;
 	font-size: 16px;
@@ -99,7 +102,7 @@ h6 {
 .sk-spinner-rotating-plane.sk-spinner {
 	width: 40px;
 	height: 40px;
-	background-color: #eb5424;
+	background-color:#5F49BA;
 	border-radius: 50%;
 	-webkit-animation: sk-rotatePlane 1.2s infinite ease-in-out;
 	animation: sk-rotatePlane 1.2s infinite ease-in-out;
@@ -121,7 +124,9 @@ transform: perspective(120px) rotateX(-180deg) rotateY(-179.9deg);
 /* home section */
 #home {
 	background: url('../images/home-bg.jpg') 50% 0 repeat-y fixed;
-	color: #ffffff;
+	background-repeat: no-repeat;
+	background-size: cover; 
+	color: #F0F8FF;
 	display: -webkit-box;
 	display: -webkit-flex;
 	display: -ms-flexbox;
@@ -152,7 +157,7 @@ transform: perspective(120px) rotateX(-180deg) rotateY(-179.9deg);
 }
 /* navigation section */
 .navbar-default {
-	background: #fff;
+	background: auto	;
 	border: none;
 	box-shadow: 0 2px 8px 0 rgba(50, 50, 50, 0.04);
 	margin: 0 !important;
@@ -349,19 +354,19 @@ transform: perspective(120px) rotateX(-180deg) rotateY(-179.9deg);
 	height: 400px;
 }
 /* contact section */
-#contact {
+/*contact {
 	background: #f6f6f6 url('../images/contact-bg.jpg') 50% 0 repeat-y fixed;
 	color: #ffffff;
 	padding-top: 100px;
 	padding-bottom: 80px;
-}
+}*/
 #contact h2 {
-	color: #ffffff;
+	color: #000000;
 }
 #contact .form-control {
 	border-radius: 4px;
-	border: none;
-	box-shadow: none;
+	border-style: double;
+	box-shadow: #888888;
 	margin-top: 12px;
 	margin-bottom: 14px;
 }
@@ -456,4 +461,14 @@ footer .copyright a {
 .portfolio-thumb .portfolio-overlay {
 	padding-top: 60px;
 }
+}
+
+hr { 
+  display: block;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+  margin-left: auto;
+  margin-right: auto;
+  border-style: inset;
+  border-width: 1px;
 }
